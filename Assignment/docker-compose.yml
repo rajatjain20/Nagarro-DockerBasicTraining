@@ -1,0 +1,29 @@
+
+services:
+  webapp:
+    image: assignment_webapp:v0
+    build: ./src
+    container_name: assignment_webapp
+    ports:
+      - 3333:3333
+    networks:
+      - network1
+    environment:
+      - ENV_NAME=DEVELOPMENT
+
+    depends_on:
+      - sqlserver
+
+  sqlserver:
+    image: assignment_sqlserver:v0
+    build: ./db
+    container_name: assignment_sqlserver
+    environment:
+      - MSSQL_SA_PASSWORD=admin@123
+    networks:
+      - network1  #defined under networks
+  
+networks:
+  network1:
+    driver: bridge  # network will be created using bridge driver
+    name: rajat_network # network will be created with custom name

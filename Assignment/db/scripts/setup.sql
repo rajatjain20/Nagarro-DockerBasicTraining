@@ -1,0 +1,10 @@
+/*
+Enter custom T-SQL here that would run after SQL Server has started up. 
+*/
+
+ALTER LOGIN SA WITH PASSWORD='admin@1234';
+GO
+CREATE DATABASE STUDENTDATA;
+GO
+CREATE TABLE STUDENTDATA.dbo.STUDENT(ROLLNO int, NAME VARCHAR(50), CLASS int);
+GO
