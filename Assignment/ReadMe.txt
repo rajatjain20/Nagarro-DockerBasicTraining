@@ -53,3 +53,20 @@ Using docker compose -
  This will create all the specified services and networks in docker-compose.yml.
  2. Now you may try if, mssql server container is started as specified above.
  3. Then webapp api can be tried. 
+
+
+ Bonus Ques - 
+
+ Setting up different environments (Development, Testing, Production) - (Commands to be executed)
+ 1. Development :
+      > docker compose up -d
+    This will pick the default compose yml file i.e. docker-compose.yml
+
+ 2. Testing : (first execute command - > docker compose down)
+      > docker compose -f docker-compose.yml -f docker-compose-test.yml up -d
+    This will execute test yml file on top of defualt yml file.
+    
+ 3. Production : (first execute command - > docker compose down)
+      > docker compose -f docker-compose.yml -f docker-compose-prod.yml up -d
+    This will execute prod yml file on top of defualt yml file.      
+

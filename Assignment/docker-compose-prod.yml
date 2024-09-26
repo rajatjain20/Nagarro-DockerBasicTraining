@@ -1,0 +1,5 @@
+
+services:
+  webapp:
+    environment:
+      - ENV_NAME=PRODUCTION
